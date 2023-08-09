@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"test\/ConfigDemo[1:4]","start":1691587109256,"end":1691587112952,"title":"test\/ConfigDemo[1:4] 14:18:29.256-14:18:32.952 get"},{"id":2,"group":1,"content":"test\/Delete[1:3]","start":1691587113253,"end":1691587113590,"title":"test\/Delete[1:3] 14:18:33.253-14:18:33.590 Delete demo1"},{"id":3,"group":1,"content":"test\/FirstApiTest[1:5]","start":1691587113627,"end":1691587113973,"title":"test\/FirstApiTest[1:5] 14:18:33.627-14:18:33.973 Hello world scenario"},{"id":4,"group":1,"content":"test\/Get[1:8]","start":1691587114028,"end":1691587114197,"title":"test\/Get[1:8] 14:18:34.028-14:18:34.197 Get Demo 1"},{"id":5,"group":1,"content":"test\/Get[2:17]","start":1691587114203,"end":1691587114665,"title":"test\/Get[2:17] 14:18:34.203-14:18:34.665 Get Demo 2"},{"id":6,"group":1,"content":"test\/Get[3:23]","start":1691587114671,"end":1691587114869,"title":"test\/Get[3:23] 14:18:34.671-14:18:34.869 Get Demo 3"},{"id":7,"group":1,"content":"test\/Get[4:30]","start":1691587114872,"end":1691587115023,"title":"test\/Get[4:30] 14:18:34.872-14:18:35.023 Get Demo 4"},{"id":8,"group":1,"content":"test\/Post[1:9]","start":1691587115125,"end":1691587115679,"title":"test\/Post[1:9] 14:18:35.125-14:18:35.679 Post Demo 1"},{"id":9,"group":1,"content":"test\/Post[2:17]","start":1691587115682,"end":1691587115898,"title":"test\/Post[2:17] 14:18:35.682-14:18:35.898 Post Demo 2"},{"id":10,"group":1,"content":"test\/Post[3:25]","start":1691587115902,"end":1691587116141,"title":"test\/Post[3:25] 14:18:35.902-14:18:36.141 Post Demo 3"},{"id":11,"group":1,"content":"test\/Post[4:34]","start":1691587116144,"end":1691587116394,"title":"test\/Post[4:34] 14:18:36.144-14:18:36.394 Post Demo 4"},{"id":12,"group":1,"content":"test\/Post[5:44]","start":1691587116397,"end":1691587116823,"title":"test\/Post[5:44] 14:18:36.397-14:18:36.823 Post Demo 5","className":"failed"},{"id":13,"group":1,"content":"test\/Post[6:59]","start":1691587116830,"end":1691587117029,"title":"test\/Post[6:59] 14:18:36.830-14:18:37.029 Post Demo 6","className":"failed"},{"id":14,"group":1,"content":"test\/Put[1:4]","start":1691587117177,"end":1691587117416,"title":"test\/Put[1:4] 14:18:37.177-14:18:37.416 Put demo 1"},{"id":15,"group":1,"content":"test\/Put[2:13]","start":1691587117420,"end":1691587117643,"title":"test\/Put[2:13] 14:18:37.420-14:18:37.643 Put demo 3"},{"id":16,"group":1,"content":"test\/Put[3:22]","start":1691587117647,"end":1691587117883,"title":"test\/Put[3:22] 14:18:37.647-14:18:37.883 Put demo 4"},{"id":17,"group":1,"content":"test\/Put[4:32]","start":1691587117887,"end":1691587118169,"title":"test\/Put[4:32] 14:18:37.887-14:18:38.169 Put demo 5","className":"failed"},{"id":18,"group":1,"content":"test\/Put[5:47]","start":1691587118174,"end":1691587118384,"title":"test\/Put[5:47] 14:18:38.174-14:18:38.384 Put Demo 6"},{"id":19,"group":1,"content":"test\/Sample[1:3]","start":1691587118476,"end":1691587118476,"title":"test\/Sample[1:3] 14:18:38.476-14:18:38.476"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
